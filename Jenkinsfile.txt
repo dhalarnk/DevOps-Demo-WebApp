@@ -146,11 +146,11 @@ pipeline {
             contextPath: '/ProdWebapp',
             war: '**/*.war'
           echo "'Deploy to Prod' - completed successfully."
-          jiraComment body: 'Build Success - Review Build and Deployment Info for Test server', issueKey: 'SQ9DEV-1'
+          jiraComment body: 'Build Success - Review Build and Deployment Info for Prod server', issueKey: 'SQ9DEV-1'
           jiraSendDeploymentInfo environmentId: 'Prod', environmentName: 'Prod', environmentType: 'production', issueKeys: ['SQ9DEV-1'], serviceIds: [''], site: 'hddevopsjiracloud.atlassian.net', state: 'successful'
         }
         failure {
-          jiraComment body: 'Build Failed - Review Build and Deployment Info for Test server', issueKey: 'SQ9DEV-1'
+          jiraComment body: 'Build Failed - Review Build and Deployment Info for Prod server', issueKey: 'SQ9DEV-1'
           jiraSendDeploymentInfo environmentId: 'Prod', environmentName: 'Prod', environmentType: 'production', issueKeys: ['SQ9DEV-1'], serviceIds: [''], site: 'hddevopsjiracloud.atlassian.net', state: 'failed'
         }
       }

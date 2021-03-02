@@ -68,7 +68,7 @@ pipeline {
           jiraSendBuildInfo branch: 'SQ9DEV-1', site: 'hddevopsjiracloud.atlassian.net'
         }
         success {
-          deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://172.31.37.215:8080/')],
+          deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://3.142.96.139:8080/')],
             contextPath: '/QAWebapp',
             war: '**/*.war'
           echo "'Deploy to QA' - completed successfully."
@@ -142,7 +142,7 @@ pipeline {
           jiraSendBuildInfo branch: 'SQ9DEV-1', site: 'hddevopsjiracloud.atlassian.net'
         }
         success {
-          deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://172.31.46.88:8080/')],
+          deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://52.15.194.196:8080/')],
             contextPath: '/ProdWebapp',
             war: '**/*.war'
           echo "'Deploy to Prod' - completed successfully."

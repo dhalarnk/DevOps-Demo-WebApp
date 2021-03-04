@@ -84,7 +84,7 @@ pipeline {
     stage('StoreUITest') {
         when {
           expression {
-            params.executeStageStoreArtifacts
+            params.executeStoreUITest
           }
         }
         parallel {
